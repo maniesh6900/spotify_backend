@@ -257,7 +257,7 @@ export type UserScalarWhereWithAggregatesInput = {
 export type UserCreateInput = {
   username: string
   password: string
-  admin: $Enums.Admin
+  admin?: $Enums.Admin
   Playist?: Prisma.PlayListCreateNestedManyWithoutUserInput
   Song?: Prisma.SongCreateNestedManyWithoutUserInput
 }
@@ -266,7 +266,7 @@ export type UserUncheckedCreateInput = {
   id?: number
   username: string
   password: string
-  admin: $Enums.Admin
+  admin?: $Enums.Admin
   Playist?: Prisma.PlayListUncheckedCreateNestedManyWithoutUserInput
   Song?: Prisma.SongUncheckedCreateNestedManyWithoutUserInput
 }
@@ -292,7 +292,7 @@ export type UserCreateManyInput = {
   id?: number
   username: string
   password: string
-  admin: $Enums.Admin
+  admin?: $Enums.Admin
 }
 
 export type UserUpdateManyMutationInput = {
@@ -389,7 +389,7 @@ export type UserUpdateOneRequiredWithoutPlayistNestedInput = {
 export type UserCreateWithoutSongInput = {
   username: string
   password: string
-  admin: $Enums.Admin
+  admin?: $Enums.Admin
   Playist?: Prisma.PlayListCreateNestedManyWithoutUserInput
 }
 
@@ -397,7 +397,7 @@ export type UserUncheckedCreateWithoutSongInput = {
   id?: number
   username: string
   password: string
-  admin: $Enums.Admin
+  admin?: $Enums.Admin
   Playist?: Prisma.PlayListUncheckedCreateNestedManyWithoutUserInput
 }
 
@@ -435,7 +435,7 @@ export type UserUncheckedUpdateWithoutSongInput = {
 export type UserCreateWithoutPlayistInput = {
   username: string
   password: string
-  admin: $Enums.Admin
+  admin?: $Enums.Admin
   Song?: Prisma.SongCreateNestedManyWithoutUserInput
 }
 
@@ -443,7 +443,7 @@ export type UserUncheckedCreateWithoutPlayistInput = {
   id?: number
   username: string
   password: string
-  admin: $Enums.Admin
+  admin?: $Enums.Admin
   Song?: Prisma.SongUncheckedCreateNestedManyWithoutUserInput
 }
 
