@@ -8,7 +8,9 @@
 * 🟢 You can import this file directly.
 */
 
+export const Admin = {
+  Admin: 'Admin',
+  User: 'User'
+} as const
 
-
-// This file is empty because there are no enums in the schema.
-export {}
+export type Admin = (typeof Admin)[keyof typeof Admin]

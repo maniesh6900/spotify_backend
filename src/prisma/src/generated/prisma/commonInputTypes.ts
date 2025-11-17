@@ -39,6 +39,13 @@ export type StringFilter<$PrismaModel = never> = {
   not?: Prisma.NestedStringFilter<$PrismaModel> | string
 }
 
+export type EnumAdminFilter<$PrismaModel = never> = {
+  equals?: $Enums.Admin | Prisma.EnumAdminFieldRefInput<$PrismaModel>
+  in?: $Enums.Admin[] | Prisma.ListEnumAdminFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Admin[] | Prisma.ListEnumAdminFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAdminFilter<$PrismaModel> | $Enums.Admin
+}
+
 export type IntWithAggregatesFilter<$PrismaModel = never> = {
   equals?: number | Prisma.IntFieldRefInput<$PrismaModel>
   in?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>
@@ -71,6 +78,16 @@ export type StringWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedStringFilter<$PrismaModel>
   _max?: Prisma.NestedStringFilter<$PrismaModel>
+}
+
+export type EnumAdminWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Admin | Prisma.EnumAdminFieldRefInput<$PrismaModel>
+  in?: $Enums.Admin[] | Prisma.ListEnumAdminFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Admin[] | Prisma.ListEnumAdminFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAdminWithAggregatesFilter<$PrismaModel> | $Enums.Admin
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAdminFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAdminFilter<$PrismaModel>
 }
 
 export type StringNullableFilter<$PrismaModel = never> = {
@@ -163,6 +180,13 @@ export type NestedStringFilter<$PrismaModel = never> = {
   not?: Prisma.NestedStringFilter<$PrismaModel> | string
 }
 
+export type NestedEnumAdminFilter<$PrismaModel = never> = {
+  equals?: $Enums.Admin | Prisma.EnumAdminFieldRefInput<$PrismaModel>
+  in?: $Enums.Admin[] | Prisma.ListEnumAdminFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Admin[] | Prisma.ListEnumAdminFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAdminFilter<$PrismaModel> | $Enums.Admin
+}
+
 export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
   equals?: number | Prisma.IntFieldRefInput<$PrismaModel>
   in?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>
@@ -205,6 +229,16 @@ export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedStringFilter<$PrismaModel>
   _max?: Prisma.NestedStringFilter<$PrismaModel>
+}
+
+export type NestedEnumAdminWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Admin | Prisma.EnumAdminFieldRefInput<$PrismaModel>
+  in?: $Enums.Admin[] | Prisma.ListEnumAdminFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Admin[] | Prisma.ListEnumAdminFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAdminWithAggregatesFilter<$PrismaModel> | $Enums.Admin
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAdminFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAdminFilter<$PrismaModel>
 }
 
 export type NestedStringNullableFilter<$PrismaModel = never> = {

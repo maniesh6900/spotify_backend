@@ -37,18 +37,21 @@ export type UserMinAggregateOutputType = {
   id: number | null
   username: string | null
   password: string | null
+  admin: $Enums.Admin | null
 }
 
 export type UserMaxAggregateOutputType = {
   id: number | null
   username: string | null
   password: string | null
+  admin: $Enums.Admin | null
 }
 
 export type UserCountAggregateOutputType = {
   id: number
   username: number
   password: number
+  admin: number
   _all: number
 }
 
@@ -65,18 +68,21 @@ export type UserMinAggregateInputType = {
   id?: true
   username?: true
   password?: true
+  admin?: true
 }
 
 export type UserMaxAggregateInputType = {
   id?: true
   username?: true
   password?: true
+  admin?: true
 }
 
 export type UserCountAggregateInputType = {
   id?: true
   username?: true
   password?: true
+  admin?: true
   _all?: true
 }
 
@@ -170,6 +176,7 @@ export type UserGroupByOutputType = {
   id: number
   username: string
   password: string
+  admin: $Enums.Admin
   _count: UserCountAggregateOutputType | null
   _avg: UserAvgAggregateOutputType | null
   _sum: UserSumAggregateOutputType | null
@@ -199,6 +206,7 @@ export type UserWhereInput = {
   id?: Prisma.IntFilter<"User"> | number
   username?: Prisma.StringFilter<"User"> | string
   password?: Prisma.StringFilter<"User"> | string
+  admin?: Prisma.EnumAdminFilter<"User"> | $Enums.Admin
   Playist?: Prisma.PlayListListRelationFilter
   Song?: Prisma.SongListRelationFilter
 }
@@ -207,6 +215,7 @@ export type UserOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   username?: Prisma.SortOrder
   password?: Prisma.SortOrder
+  admin?: Prisma.SortOrder
   Playist?: Prisma.PlayListOrderByRelationAggregateInput
   Song?: Prisma.SongOrderByRelationAggregateInput
 }
@@ -218,6 +227,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.UserWhereInput[]
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   password?: Prisma.StringFilter<"User"> | string
+  admin?: Prisma.EnumAdminFilter<"User"> | $Enums.Admin
   Playist?: Prisma.PlayListListRelationFilter
   Song?: Prisma.SongListRelationFilter
 }, "id" | "username">
@@ -226,6 +236,7 @@ export type UserOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   username?: Prisma.SortOrder
   password?: Prisma.SortOrder
+  admin?: Prisma.SortOrder
   _count?: Prisma.UserCountOrderByAggregateInput
   _avg?: Prisma.UserAvgOrderByAggregateInput
   _max?: Prisma.UserMaxOrderByAggregateInput
@@ -240,11 +251,13 @@ export type UserScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"User"> | number
   username?: Prisma.StringWithAggregatesFilter<"User"> | string
   password?: Prisma.StringWithAggregatesFilter<"User"> | string
+  admin?: Prisma.EnumAdminWithAggregatesFilter<"User"> | $Enums.Admin
 }
 
 export type UserCreateInput = {
   username: string
   password: string
+  admin: $Enums.Admin
   Playist?: Prisma.PlayListCreateNestedManyWithoutUserInput
   Song?: Prisma.SongCreateNestedManyWithoutUserInput
 }
@@ -253,6 +266,7 @@ export type UserUncheckedCreateInput = {
   id?: number
   username: string
   password: string
+  admin: $Enums.Admin
   Playist?: Prisma.PlayListUncheckedCreateNestedManyWithoutUserInput
   Song?: Prisma.SongUncheckedCreateNestedManyWithoutUserInput
 }
@@ -260,6 +274,7 @@ export type UserUncheckedCreateInput = {
 export type UserUpdateInput = {
   username?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  admin?: Prisma.EnumAdminFieldUpdateOperationsInput | $Enums.Admin
   Playist?: Prisma.PlayListUpdateManyWithoutUserNestedInput
   Song?: Prisma.SongUpdateManyWithoutUserNestedInput
 }
@@ -268,6 +283,7 @@ export type UserUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   username?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  admin?: Prisma.EnumAdminFieldUpdateOperationsInput | $Enums.Admin
   Playist?: Prisma.PlayListUncheckedUpdateManyWithoutUserNestedInput
   Song?: Prisma.SongUncheckedUpdateManyWithoutUserNestedInput
 }
@@ -276,23 +292,27 @@ export type UserCreateManyInput = {
   id?: number
   username: string
   password: string
+  admin: $Enums.Admin
 }
 
 export type UserUpdateManyMutationInput = {
   username?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  admin?: Prisma.EnumAdminFieldUpdateOperationsInput | $Enums.Admin
 }
 
 export type UserUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   username?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  admin?: Prisma.EnumAdminFieldUpdateOperationsInput | $Enums.Admin
 }
 
 export type UserCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   username?: Prisma.SortOrder
   password?: Prisma.SortOrder
+  admin?: Prisma.SortOrder
 }
 
 export type UserAvgOrderByAggregateInput = {
@@ -303,12 +323,14 @@ export type UserMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   username?: Prisma.SortOrder
   password?: Prisma.SortOrder
+  admin?: Prisma.SortOrder
 }
 
 export type UserMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   username?: Prisma.SortOrder
   password?: Prisma.SortOrder
+  admin?: Prisma.SortOrder
 }
 
 export type UserSumOrderByAggregateInput = {
@@ -322,6 +344,10 @@ export type UserScalarRelationFilter = {
 
 export type StringFieldUpdateOperationsInput = {
   set?: string
+}
+
+export type EnumAdminFieldUpdateOperationsInput = {
+  set?: $Enums.Admin
 }
 
 export type IntFieldUpdateOperationsInput = {
@@ -363,6 +389,7 @@ export type UserUpdateOneRequiredWithoutPlayistNestedInput = {
 export type UserCreateWithoutSongInput = {
   username: string
   password: string
+  admin: $Enums.Admin
   Playist?: Prisma.PlayListCreateNestedManyWithoutUserInput
 }
 
@@ -370,6 +397,7 @@ export type UserUncheckedCreateWithoutSongInput = {
   id?: number
   username: string
   password: string
+  admin: $Enums.Admin
   Playist?: Prisma.PlayListUncheckedCreateNestedManyWithoutUserInput
 }
 
@@ -392,6 +420,7 @@ export type UserUpdateToOneWithWhereWithoutSongInput = {
 export type UserUpdateWithoutSongInput = {
   username?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  admin?: Prisma.EnumAdminFieldUpdateOperationsInput | $Enums.Admin
   Playist?: Prisma.PlayListUpdateManyWithoutUserNestedInput
 }
 
@@ -399,12 +428,14 @@ export type UserUncheckedUpdateWithoutSongInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   username?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  admin?: Prisma.EnumAdminFieldUpdateOperationsInput | $Enums.Admin
   Playist?: Prisma.PlayListUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutPlayistInput = {
   username: string
   password: string
+  admin: $Enums.Admin
   Song?: Prisma.SongCreateNestedManyWithoutUserInput
 }
 
@@ -412,6 +443,7 @@ export type UserUncheckedCreateWithoutPlayistInput = {
   id?: number
   username: string
   password: string
+  admin: $Enums.Admin
   Song?: Prisma.SongUncheckedCreateNestedManyWithoutUserInput
 }
 
@@ -434,6 +466,7 @@ export type UserUpdateToOneWithWhereWithoutPlayistInput = {
 export type UserUpdateWithoutPlayistInput = {
   username?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  admin?: Prisma.EnumAdminFieldUpdateOperationsInput | $Enums.Admin
   Song?: Prisma.SongUpdateManyWithoutUserNestedInput
 }
 
@@ -441,6 +474,7 @@ export type UserUncheckedUpdateWithoutPlayistInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   username?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  admin?: Prisma.EnumAdminFieldUpdateOperationsInput | $Enums.Admin
   Song?: Prisma.SongUncheckedUpdateManyWithoutUserNestedInput
 }
 
@@ -488,6 +522,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   id?: boolean
   username?: boolean
   password?: boolean
+  admin?: boolean
   Playist?: boolean | Prisma.User$PlayistArgs<ExtArgs>
   Song?: boolean | Prisma.User$SongArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
@@ -497,21 +532,24 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   id?: boolean
   username?: boolean
   password?: boolean
+  admin?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   username?: boolean
   password?: boolean
+  admin?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectScalar = {
   id?: boolean
   username?: boolean
   password?: boolean
+  admin?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "username" | "password", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "username" | "password" | "admin", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   Playist?: boolean | Prisma.User$PlayistArgs<ExtArgs>
   Song?: boolean | Prisma.User$SongArgs<ExtArgs>
@@ -530,6 +568,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     id: number
     username: string
     password: string
+    admin: $Enums.Admin
   }, ExtArgs["result"]["user"]>
   composites: {}
 }
@@ -958,6 +997,7 @@ export interface UserFieldRefs {
   readonly id: Prisma.FieldRef<"User", 'Int'>
   readonly username: Prisma.FieldRef<"User", 'String'>
   readonly password: Prisma.FieldRef<"User", 'String'>
+  readonly admin: Prisma.FieldRef<"User", 'Admin'>
 }
     
 

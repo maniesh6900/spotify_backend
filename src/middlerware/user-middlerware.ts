@@ -18,12 +18,11 @@ export const userMiddlerware = async (
         throw new ApiError(401, "Unauthorized request");
     }
 
-    
     const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET!);
     
-    // @ts-ignore
+    // @ts-expect-error
     if (decodedToken.id) {
-        // @ts-ignore
+        // @ts-expect-error
         req.userId = decodedToken.id;
         next();
     } else {
