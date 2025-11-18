@@ -1,5 +1,5 @@
 import { client } from "../prisma/index.js";
-import { userSignupSchema } from "../type/index.js";
+import { adminSignupSchema, userSignupSchema } from "../type/index.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
@@ -79,7 +79,7 @@ export const UserLogin = asyncHandler(async (req, res)=> {
         secure: true,
     })
     .json(new ApiResponse(200, user, "User logged in successfully"));
-})
+});
 
 export const UserLogout = asyncHandler(async (req : any, res)=> {
     const {userId} = req;

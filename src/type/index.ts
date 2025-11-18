@@ -1,9 +1,17 @@
 import z from "zod";
+import { Admin } from "../prisma/src/generated/prisma/enums.js";
+
+export const adminSignupSchema = z.object({
+    username: z.string().min(3).max(20),
+    password: z.string(),
+    Admin: z.enum(["Admin", "User"]),
+})
 
 export const userSignupSchema = z.object({
     username: z.string().min(3).max(20),
     password: z.string(),
 })
+
 
 export const addMusicSchema = z.object({
     name: z.string().min(3).max(20),
